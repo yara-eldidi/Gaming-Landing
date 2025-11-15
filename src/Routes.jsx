@@ -1,5 +1,6 @@
 import LandingPage from "./layout/Landing";
 import HomePage from "./pages/home";
+
 import LeaguePage from "./pages/LeagueOfLegend";
 
 const routes = [

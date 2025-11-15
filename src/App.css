@@ -43,6 +43,45 @@ header ul li a:hover {
   color: white;
   transition: 0.4s ease-in;
 }
+.main-nav {
+  display: block;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  /* Hide menu initially */
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background: #111;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 10;
+  }
+
+  /* Show when opened */
+  .main-nav.open {
+    display: block;
+  }
+
+  /* Stack items */
+  .main-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px !important;
+  }
+
+  /* Hamburger button */
+  .mobile-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+  }
+}
 
 /*---------------------------SearchBar----------------------*/
 .box {
@@ -98,7 +137,61 @@ select:hover {
   color: white;
   transition: 0.4s ease-in;
 }
+@media (max-width: 768px) {
 
+  /* Stack search + buttons under each other */
+  .box {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Make search input wider on mobile */
+  .search-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    max-width: 350px; /* optional */
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  /* Buttons container becomes centered & stacked horizontal */
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+
+  /* Make Sign In button smaller if needed */
+  .sign-btn {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  select {
+    padding: 6px;
+    font-size: 14px;
+  }
+}
+
+
+/* 🔹 VERY SMALL SCREENS (max-width: 480px) */
+@media (max-width: 480px) {
+
+  .buttons {
+    flex-direction: column;  /* stack select + sign in */
+    width: 100%;
+    align-items: center;
+  }
+
+  select,
+  .sign-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
 /*------------Section---------------*/
 section {
   color: white;
@@ -247,4 +340,104 @@ select option:checked {
 .footer-link li a:hover {
   color: #797c83;
   transition: 0.4s ease;
+}
+/* =======================
+   📌 Responsive for Stats
+   ======================= */
+
+@media (max-width: 992px) {
+  .stats .d-flex.justify-content-between {
+    flex-direction: column;
+    gap: 25px;
+    align-items: flex-start;
+  }
+
+  .stats .d-flex.justify-content-start {
+    flex-wrap: wrap;
+    gap: 20px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats h2 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .down-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+/* =======================
+   📌 Responsive for Game Heading
+   ======================= */
+
+@media (max-width: 768px) {
+  .game-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .game-head select {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+
+
+/* =======================
+   📌 Responsive for Game Cards
+   ======================= */
+
+@media (max-width: 1200px) {
+  .game-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .game-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .game-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .game-cards {
+    grid-template-columns:repeat(1, 1fr);
+  }
+}
+
+
+
+/* =======================
+   📌 Responsive Footer
+   ======================= */
+
+@media (max-width: 768px) {
+  .footer-lay {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-lay {
+    text-align: center;
+  }
+
+  .footer-link h3 {
+    margin-left: 0;
+  }
 }

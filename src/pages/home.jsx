@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
-import HeaderComp from "../components/headerComp";
 import SearchComp from "../components/SearchComp";
-import Footer from "../layout/footer";
+import HeaderComp from "../components/HeaderComp";
+import Footer from "../layout/Footer";
 
 function HomePage() {
   return (
     <>
-      <HeaderComp/>
+     <HeaderComp/>
       <SearchComp />
       <Outlet />
       <Footer />
